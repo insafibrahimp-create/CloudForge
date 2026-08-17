@@ -1871,3 +1871,515 @@ h2 span {
         );
     }
 }
+/* =====================================================
+   MODERN ABOUT SECTION
+===================================================== */
+
+.about-section {
+    width: min(
+        calc(100% - 40px),
+        var(--max-width)
+    );
+
+    margin: 0 auto;
+
+    padding: 120px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+
+/* ================= ABOUT HEADER ================= */
+
+.about-modern-header {
+    max-width: 850px;
+
+    margin-bottom: 55px;
+}
+
+
+.about-modern-header .section-command {
+    display: block;
+
+    color: var(--cyan);
+
+    font-family: monospace;
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+
+.about-modern-header h2 {
+    color: var(--text);
+
+    font-size: clamp(
+        38px,
+        6vw,
+        68px
+    );
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+
+.about-modern-header h2 span {
+    color: var(--purple);
+
+    text-shadow:
+        0 0 35px
+        rgba(168, 85, 247, 0.22);
+}
+
+
+.about-modern-header > p {
+    max-width: 720px;
+
+    color: var(--text-secondary);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* ================= ABOUT GRID ================= */
+
+.about-modern-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+
+/* ================= INTRO CARD ================= */
+
+.about-intro-card {
+    grid-row: span 2;
+
+    min-height: 450px;
+
+    padding: 35px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(168, 85, 247, 0.3);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(168, 85, 247, 0.08),
+            rgba(15, 15, 25, 0.8)
+        );
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.about-intro-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    right: -100px;
+    bottom: -100px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(168, 85, 247, 0.16),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+.about-intro-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(168, 85, 247, 0.6);
+
+    box-shadow:
+        0 20px 60px
+        rgba(168, 85, 247, 0.1);
+}
+
+
+/* ================= LABEL ================= */
+
+.about-label {
+    display: block;
+
+    color: var(--purple-light);
+
+    font-family: monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 28px;
+}
+
+
+/* ================= INTRO TEXT ================= */
+
+.about-intro-card h3 {
+    position: relative;
+
+    color: var(--text);
+
+    font-size: 34px;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 22px;
+}
+
+
+.about-intro-card > p {
+    position: relative;
+
+    color: var(--text-secondary);
+
+    font-size: 15px;
+
+    line-height: 1.85;
+
+    margin-bottom: 18px;
+}
+
+
+/* ================= TERMINAL LINE ================= */
+
+.about-terminal-line {
+    position: absolute;
+
+    left: 35px;
+    right: 35px;
+    bottom: 30px;
+
+    padding: 14px 16px;
+
+    border:
+        1px solid
+        rgba(34, 211, 238, 0.2);
+
+    border-radius: 8px;
+
+    background:
+        rgba(34, 211, 238, 0.03);
+
+    color: var(--text-secondary);
+
+    font-family: monospace;
+
+    font-size: 12px;
+}
+
+
+.about-terminal-line span {
+    color: var(--purple-light);
+
+    margin-right: 8px;
+}
+
+
+.about-terminal-line strong {
+    display: block;
+
+    color: var(--cyan);
+
+    margin-top: 5px;
+
+    font-weight: 500;
+}
+
+
+/* ================= EDUCATION CARD ================= */
+
+.about-info-card {
+    min-height: 210px;
+
+    padding: 30px;
+
+    border:
+        1px solid
+        rgba(34, 211, 238, 0.18);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(34, 211, 238, 0.045),
+            rgba(15, 15, 25, 0.75)
+        );
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.about-info-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(34, 211, 238, 0.5);
+
+    box-shadow:
+        0 20px 50px
+        rgba(34, 211, 238, 0.07);
+}
+
+
+.about-info-icon {
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+
+.about-info-card h3 {
+    color: var(--text);
+
+    font-size: 24px;
+
+    margin-bottom: 5px;
+}
+
+
+.about-info-card p {
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 5px;
+}
+
+
+.about-info-card .about-highlight {
+    color: var(--purple-light);
+
+    font-weight: 600;
+}
+
+
+.about-status {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: #22c55e;
+
+    font-family: monospace;
+
+    font-size: 11px;
+}
+
+
+/* ================= FOCUS CARDS ================= */
+
+.about-focus-card {
+    min-height: 250px;
+
+    padding: 28px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(168, 85, 247, 0.22);
+
+    border-radius: 16px;
+
+    background:
+        rgba(15, 15, 25, 0.7);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.about-focus-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(168, 85, 247, 0.55);
+
+    box-shadow:
+        0 18px 45px
+        rgba(168, 85, 247, 0.09);
+}
+
+
+.about-focus-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border:
+        1px solid
+        rgba(168, 85, 247, 0.3);
+
+    border-radius: 12px;
+
+    background:
+        rgba(168, 85, 247, 0.07);
+
+    color: var(--cyan);
+
+    font-size: 22px;
+
+    font-family: monospace;
+}
+
+
+.about-focus-card h3 {
+    color: var(--text);
+
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+
+.about-focus-card p {
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ================= ABOUT MOBILE ================= */
+
+@media (max-width: 850px) {
+
+    .about-section {
+        width: min(
+            calc(100% - 40px),
+            var(--max-width)
+        );
+
+        padding: 90px 0;
+    }
+
+
+    .about-modern-header h2 {
+        font-size: 48px;
+    }
+
+
+    .about-modern-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-intro-card {
+        grid-row: auto;
+
+        min-height: 420px;
+    }
+
+
+    .about-info-card,
+    .about-focus-card {
+        min-height: auto;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .about-section {
+        width: min(
+            calc(100% - 28px),
+            var(--max-width)
+        );
+
+        padding: 75px 0;
+    }
+
+
+    .about-modern-header {
+        margin-bottom: 35px;
+    }
+
+
+    .about-modern-header h2 {
+        font-size: 38px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .about-modern-header > p {
+        font-size: 15px;
+    }
+
+
+    .about-intro-card {
+        padding: 25px;
+
+        min-height: 450px;
+    }
+
+
+    .about-intro-card h3 {
+        font-size: 28px;
+    }
+
+
+    .about-terminal-line {
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+    }
+
+
+    .about-info-card,
+    .about-focus-card {
+        padding: 25px;
+    }
+
+}
