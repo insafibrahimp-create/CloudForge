@@ -3384,3 +3384,47 @@ h2 span {
     }
 
 }
+/* =====================================================
+   DAY 5 — SCROLL REVEAL ANIMATION
+===================================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+
+    transition-delay: var(--reveal-delay, 0s);
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Stagger cards */
+
+.about-modern-grid > *,
+.skills-modern-grid > *,
+.projects-grid > *,
+.github-stats-grid > *,
+.contact-grid > * {
+    transition-delay: var(--reveal-delay, 0s);
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal,
+    .reveal-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+}
