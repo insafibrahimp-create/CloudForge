@@ -3428,3 +3428,138 @@ h2 span {
     }
 
 }
+
+/* =====================================================
+   DAY 5 — NAVBAR POLISH
+===================================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(7, 7, 11, 0.78);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.nav-links a {
+    position: relative;
+    padding: 8px 0;
+
+    transition:
+        color 0.25s ease,
+        text-shadow 0.25s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--cyan)
+        );
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text);
+
+    text-shadow:
+        0 0 15px
+        rgba(34, 211, 238, 0.35);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--cyan);
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* ================= MOBILE NAVBAR ================= */
+
+@media (max-width: 850px) {
+
+    .nav-links.mobile-open {
+        position: absolute;
+
+        top: 76px;
+        left: 20px;
+        right: 20px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        padding: 14px;
+
+        border:
+            1px solid
+            rgba(168, 85, 247, 0.25);
+
+        border-radius: 12px;
+
+        background:
+            rgba(7, 7, 11, 0.96);
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        box-shadow:
+            0 20px 50px
+            rgba(0, 0, 0, 0.35);
+
+        animation:
+            menuSlide 0.25s ease;
+    }
+
+    .nav-links.mobile-open a {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 7px;
+    }
+
+    .nav-links.mobile-open a:hover {
+        background:
+            rgba(168, 85, 247, 0.07);
+    }
+
+    .nav-links.mobile-open a::after {
+        display: none;
+    }
+}
+
+@keyframes menuSlide {
+
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
