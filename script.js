@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ============================================ */
 
     const revealElements = document.querySelectorAll(
-        ".about-modern-card, " +
         ".about-intro-card, " +
         ".about-info-card, " +
         ".about-focus-card, " +
@@ -90,8 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } else {
 
-        // Fallback for older browsers
-
         revealElements.forEach(element => {
 
             element.classList.add("reveal-visible");
@@ -135,5 +132,76 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
+
+
+
+    /* ============================================
+       ACTIVE NAVIGATION
+    ============================================ */
+
+    const sections = document.querySelectorAll("section[id]");
+    const navItems = document.querySelectorAll(".nav-links a");
+
+
+    const updateActiveNav = () => {
+
+        let currentSection = "";
+
+
+        sections.forEach(section => {
+
+            const sectionTop =
+                section.offsetTop - 140;
+
+            const sectionHeight =
+                section.offsetHeight;
+
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY <
+                sectionTop + sectionHeight
+            ) {
+
+                currentSection =
+                    section.getAttribute("id");
+
+            }
+
+        });
+
+
+        navItems.forEach(link => {
+
+            link.classList.remove("active");
+
+
+            const href =
+                link.getAttribute("href");
+
+
+            if (
+                href === `#${currentSection}`
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    };
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveNav,
+        {
+            passive: true
+        }
+    );
+
+
+    updateActiveNav();
 
 });
