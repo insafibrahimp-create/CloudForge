@@ -4301,3 +4301,171 @@ h2 span {
     }
 
 }
+
+
+/* =====================================================
+   DAY 7 — TECHNICAL SKILLS REDESIGN
+===================================================== */
+
+.skills-modern-section {
+    width: min(calc(100% - 40px), var(--max-width));
+    margin: 0 auto;
+    padding: 120px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.skills-modern-header {
+    max-width: 760px;
+    margin-bottom: 52px;
+}
+
+.skills-modern-header .section-command {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--cyan);
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.skills-modern-header h2 {
+    margin-bottom: 20px;
+    color: var(--text);
+    font-size: clamp(44px, 6vw, 68px);
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.skills-modern-header p {
+    max-width: 680px;
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.skills-modern-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.skill-row {
+    display: grid;
+    grid-template-columns: 70px minmax(0, 1fr);
+    gap: 30px;
+    padding: 34px 8px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+    transition:
+        padding 0.3s ease,
+        background 0.3s ease;
+}
+
+.skill-row:hover {
+    padding-left: 18px;
+    padding-right: 18px;
+    background: linear-gradient(
+        90deg,
+        rgba(168, 85, 247, 0.045),
+        rgba(34, 211, 238, 0.018),
+        transparent
+    );
+}
+
+.skill-row-number {
+    padding-top: 5px;
+    color: var(--purple-light);
+    font-family: monospace;
+    font-size: 13px;
+}
+
+.skill-row-content {
+    min-width: 0;
+}
+
+.skill-row-content h3 {
+    margin-bottom: 10px;
+    color: var(--text);
+    font-size: clamp(24px, 3vw, 32px);
+    letter-spacing: -0.8px;
+}
+
+.skill-row-content p {
+    max-width: 700px;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.skill-row-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-row-tags span {
+    padding: 8px 11px;
+    border: 1px solid rgba(168, 85, 247, 0.23);
+    border-radius: 6px;
+    background: rgba(168, 85, 247, 0.045);
+    color: #c4b5fd;
+    font-family: monospace;
+    font-size: 10px;
+    transition:
+        border-color 0.25s ease,
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+.skill-row:hover .skill-row-tags span {
+    border-color: rgba(168, 85, 247, 0.35);
+    background: rgba(168, 85, 247, 0.07);
+}
+
+@media (max-width: 700px) {
+
+    .skills-modern-section {
+        padding: 90px 0;
+    }
+
+    .skills-modern-header h2 {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
+
+    .skill-row {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 18px;
+        padding: 28px 0;
+    }
+
+    .skill-row:hover {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .skills-modern-section {
+        width: min(calc(100% - 28px), var(--max-width));
+        padding: 75px 0;
+    }
+
+    .skills-modern-header {
+        margin-bottom: 38px;
+    }
+
+    .skills-modern-header h2 {
+        font-size: 38px;
+    }
+
+    .skill-row-content h3 {
+        font-size: 25px;
+    }
+
+    .skill-row-content p {
+        font-size: 13px;
+    }
+
+}
