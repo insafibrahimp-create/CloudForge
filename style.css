@@ -3563,3 +3563,169 @@ h2 span {
         transform: translateY(0);
     }
 }
+
+
+/* =====================================================
+   DAY 6 — PROJECT SHOWCASE UPGRADE
+===================================================== */
+
+/* Project card polish */
+.project-card {
+    min-height: 390px;
+    padding: 34px;
+    isolation: isolate;
+}
+
+.project-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(168, 85, 247, 0.06),
+            transparent 42%,
+            rgba(34, 211, 238, 0.035)
+        );
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.project-card:hover::after {
+    opacity: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(168, 85, 247, 0.55);
+    box-shadow:
+        0 22px 55px rgba(168, 85, 247, 0.13),
+        0 0 0 1px rgba(168, 85, 247, 0.04);
+}
+
+.project-number {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--purple-light);
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+}
+
+.project-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 9px;
+    border: 1px solid rgba(34, 197, 94, 0.22);
+    border-radius: 999px;
+    background: rgba(34, 197, 94, 0.045);
+    color: #86efac;
+    font-size: 10px;
+    letter-spacing: 0;
+}
+
+.project-status::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.55);
+}
+
+.project-icon {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 20px;
+    border-color: rgba(34, 211, 238, 0.3);
+    background: rgba(34, 211, 238, 0.045);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+    transform: translateY(-2px);
+    border-color: rgba(34, 211, 238, 0.55);
+    box-shadow: 0 0 24px rgba(34, 211, 238, 0.09);
+}
+
+.project-card h3 {
+    font-size: 25px;
+    letter-spacing: -0.4px;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    max-width: 520px;
+    font-size: 14px;
+    line-height: 1.75;
+    margin-bottom: 24px;
+}
+
+.project-tech {
+    gap: 8px;
+    margin-bottom: 26px;
+}
+
+.project-tech span {
+    padding: 7px 10px;
+    border-radius: 7px;
+    font-size: 10px;
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.project-card:hover .project-tech span {
+    border-color: rgba(168, 85, 247, 0.32);
+}
+
+.project-links {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-btn {
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.project-btn:hover {
+    transform: translateY(-2px);
+    color: var(--cyan);
+    border-color: var(--cyan);
+    background: rgba(34, 211, 238, 0.035);
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.11);
+}
+
+/* Project card number line stays clean on smaller screens */
+@media (max-width: 500px) {
+    .project-card {
+        min-height: 350px;
+        padding: 26px;
+    }
+
+    .project-card h3 {
+        font-size: 22px;
+    }
+
+    .project-status {
+        font-size: 9px;
+        padding: 5px 8px;
+    }
+
+    .project-links {
+        flex-wrap: wrap;
+    }
+}
