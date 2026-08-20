@@ -15,20 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (menuButton && navLinks) {
 
         menuButton.addEventListener("click", () => {
-
             navLinks.classList.toggle("mobile-open");
-
         });
 
-
         // Close mobile menu after clicking a link
-
         navLinks.querySelectorAll("a").forEach(link => {
 
             link.addEventListener("click", () => {
-
                 navLinks.classList.remove("mobile-open");
-
             });
 
         });
@@ -36,21 +30,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
     /* ============================================
        SCROLL REVEAL ANIMATIONS
     ============================================ */
 
     const revealElements = document.querySelectorAll(
+        ".about-modern-card, " +
         ".about-intro-card, " +
         ".about-info-card, " +
         ".about-focus-card, " +
         ".skills-modern-card, " +
+        ".skill-row, " +
         ".project-card, " +
+        ".featured-project, " +
         ".github-activity-card, " +
         ".github-stat-card, " +
+        ".github-modern-card, " +
         ".contact-info, " +
-        ".contact-terminal"
+        ".contact-terminal, " +
+        ".contact-modern-inner, " +
+        ".contact-channel-card"
     );
 
 
@@ -89,6 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } else {
 
+        // Fallback for older browsers
+
         revealElements.forEach(element => {
 
             element.classList.add("reveal-visible");
@@ -96,7 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     }
-
 
 
     /* ============================================
@@ -107,8 +107,11 @@ document.addEventListener("DOMContentLoaded", () => {
         ".about-modern-grid",
         ".skills-modern-grid",
         ".projects-grid",
+        ".featured-project-list",
         ".github-stats-grid",
-        ".contact-grid"
+        ".github-modern-grid",
+        ".contact-grid",
+        ".contact-channels"
     ];
 
 
@@ -118,9 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!group) return;
 
-
         const cards = group.children;
-
 
         Array.from(cards).forEach((card, index) => {
 
@@ -134,74 +135,101 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-
     /* ============================================
-       ACTIVE NAVIGATION
+       CONTACT FORM
     ============================================ */
 
-    const sections = document.querySelectorAll("section[id]");
-    const navItems = document.querySelectorAll(".nav-links a");
+    const contactForm = document.querySelector("#contactForm");
+
+    if (contactForm) {
+
+        contactForm.addEventListener("submit", (event) => {
+
+            event.preventDefault();
+
+            const name = document.querySelector("#contactName")?.value.trim();
+            const email = document.querySelector("#contactEmail")?.value.trim();
+            const message = document.querySelector("#contactMessage")?.value.trim();
 
 
-    const updateActiveNav = () => {
+            if (!name || !email || !message) {
 
-        let currentSection = "";
+                alert("Please fill in all fields before sending.");
 
-
-        sections.forEach(section => {
-
-            const sectionTop =
-                section.offsetTop - 140;
-
-            const sectionHeight =
-                section.offsetHeight;
-
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY <
-                sectionTop + sectionHeight
-            ) {
-
-                currentSection =
-                    section.getAttribute("id");
+                return;
 
             }
 
+
+            /*
+                IMPORTANT:
+                Replace this with your real email address.
+            */
+
+            const recipient = "Insafibrahimp@gmail.com";
+
+
+            const subject =
+                `CloudForge Portfolio Inquiry from ${name}`;
+
+
+            const body =
+                `Name: ${name}\n\n` +
+                `Email: ${email}\n\n` +
+                `Message:\n${message}`;
+
+
+            const mailtoURL =
+                `mailto:${recipient}` +
+                `?subject=${encodeURIComponent(subject)}` +
+                `&body=${encodeURIComponent(body)}`;
+
+
+            window.location.href = mailtoURL;
+
         });
 
-
-        navItems.forEach(link => {
-
-            link.classList.remove("active");
+    }
 
 
-            const href =
-                link.getAttribute("href");
+    /* ============================================
+       SMOOTH SCROLL
+    ============================================ */
 
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-            if (
-                href === `#${currentSection}`
-            ) {
+        link.addEventListener("click", function (event) {
 
-                link.classList.add("active");
+            const targetID = this.getAttribute("href");
 
-            }
+            if (!targetID || targetID === "#") return;
+
+            const target = document.querySelector(targetID);
+
+            if (!target) return;
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
 
         });
 
-    };
+    });
 
 
-    window.addEventListener(
-        "scroll",
-        updateActiveNav,
-        {
-            passive: true
-        }
-    );
+    /* ============================================
+       CURRENT YEAR
+    ============================================ */
 
+    const yearElements = document.querySelectorAll(".current-year");
 
-    updateActiveNav();
+    yearElements.forEach(element => {
+
+        element.textContent = new Date().getFullYear();
+
+    });
 
 });
