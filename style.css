@@ -4469,3 +4469,282 @@ h2 span {
     }
 
 }
+
+
+/* =====================================================
+   DAY 7 — GITHUB + CONTACT REDESIGN
+===================================================== */
+
+/* ================= GITHUB ================= */
+
+.github-modern-section {
+    width: min(calc(100% - 40px), var(--max-width));
+    margin: 0 auto;
+    padding: 120px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.github-modern-header {
+    max-width: 760px;
+    margin-bottom: 48px;
+}
+
+.github-modern-header .section-command {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--cyan);
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.github-modern-header h2 {
+    margin-bottom: 20px;
+    color: var(--text);
+    font-size: clamp(44px, 6vw, 68px);
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.github-modern-header p {
+    max-width: 680px;
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.github-modern-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    background: rgba(148, 163, 184, 0.16);
+}
+
+.github-modern-card {
+    min-height: 155px;
+    display: grid;
+    grid-template-columns: 45px minmax(0, 1fr) 25px;
+    gap: 20px;
+    align-items: start;
+    padding: 27px;
+    color: var(--text);
+    background: #09090f;
+    text-decoration: none;
+    transition:
+        background 0.25s ease,
+        padding 0.25s ease;
+}
+
+.github-modern-card:hover {
+    padding-left: 34px;
+    background: rgba(168, 85, 247, 0.045);
+}
+
+.github-modern-number {
+    color: var(--purple-light);
+    font-family: monospace;
+    font-size: 11px;
+}
+
+.github-modern-card strong {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--text);
+    font-size: 18px;
+}
+
+.github-modern-card p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.github-modern-arrow {
+    color: var(--cyan);
+    font-size: 17px;
+    transition: transform 0.25s ease;
+}
+
+.github-modern-card:hover .github-modern-arrow {
+    transform: translate(3px, -3px);
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-modern-section {
+    width: min(calc(100% - 40px), var(--max-width));
+    margin: 0 auto;
+    padding: 140px 0 130px;
+}
+
+.contact-modern-inner {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(45px, 8vw, 85px);
+    border: 1px solid rgba(168, 85, 247, 0.28);
+    border-radius: 18px;
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(168, 85, 247, 0.13),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(34, 211, 238, 0.055),
+            transparent 30%
+        ),
+        rgba(12, 12, 20, 0.8);
+}
+
+.contact-modern-inner::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.06);
+    border-radius: 12px;
+    pointer-events: none;
+}
+
+.contact-modern-inner .section-command {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    color: var(--cyan);
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.contact-modern-label {
+    position: relative;
+    margin-bottom: 18px;
+    color: var(--purple-light);
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.contact-modern-inner h2 {
+    position: relative;
+    max-width: 900px;
+    margin-bottom: 25px;
+    color: var(--text);
+    font-size: clamp(46px, 7vw, 82px);
+    line-height: 0.98;
+    letter-spacing: -4px;
+}
+
+.contact-modern-inner h2 span {
+    color: var(--purple);
+}
+
+.contact-modern-description {
+    position: relative;
+    max-width: 680px;
+    margin-bottom: 35px;
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.contact-modern-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 38px;
+    padding: 14px 21px;
+    border-radius: 7px;
+    color: white;
+    background: linear-gradient(135deg, var(--purple), #7c3aed);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.18);
+    transition: 0.25s ease;
+}
+
+.contact-modern-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(168, 85, 247, 0.3);
+}
+
+.contact-modern-links {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.contact-modern-links a {
+    color: var(--text-secondary);
+    font-family: monospace;
+    font-size: 12px;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.contact-modern-links a:hover {
+    color: var(--cyan);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 800px) {
+
+    .github-modern-section {
+        padding: 90px 0;
+    }
+
+    .github-modern-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-modern-section {
+        padding: 90px 0;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .github-modern-section {
+        width: min(calc(100% - 28px), var(--max-width));
+        padding: 75px 0;
+    }
+
+    .github-modern-header h2 {
+        font-size: 38px;
+        letter-spacing: -2px;
+    }
+
+    .github-modern-card {
+        min-height: 135px;
+        padding: 22px;
+        grid-template-columns: 35px minmax(0, 1fr) 20px;
+        gap: 14px;
+    }
+
+    .github-modern-card:hover {
+        padding-left: 26px;
+    }
+
+    .contact-modern-section {
+        width: min(calc(100% - 28px), var(--max-width));
+        padding: 75px 0;
+    }
+
+    .contact-modern-inner {
+        padding: 38px 25px;
+        border-radius: 14px;
+    }
+
+    .contact-modern-inner h2 {
+        font-size: 43px;
+        letter-spacing: -2.5px;
+    }
+
+}
