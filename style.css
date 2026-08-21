@@ -4949,3 +4949,77 @@ h2 span {
     }
 
 }
+/* =====================================================
+   GITHUB — FINAL DAY 7 LAYOUT FIX
+===================================================== */
+
+.github-modern-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    background: rgba(148, 163, 184, 0.16);
+}
+
+
+/* Make the 5th card fill the complete final row */
+
+.github-modern-card:nth-child(5) {
+    grid-column: 1 / -1;
+}
+
+
+/* Keep the cards clean */
+
+.github-modern-card {
+    min-height: 180px;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 850px) {
+
+    .github-modern-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .github-modern-card:nth-child(5) {
+        grid-column: auto;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 500px) {
+
+    .github-modern-section {
+        width: min(
+            calc(100% - 28px),
+            var(--max-width)
+        );
+
+        padding: 90px 0 70px;
+    }
+
+    .github-modern-header h2 {
+        font-size: 38px;
+        letter-spacing: -2px;
+    }
+
+    .github-modern-card {
+        min-height: 135px;
+        padding: 22px;
+
+        grid-template-columns:
+            35px
+            minmax(0, 1fr)
+            20px;
+
+        gap: 14px;
+    }
+
+}
