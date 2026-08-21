@@ -6010,3 +6010,565 @@ h2 span {
     }
 
 }
+/* =====================================================
+   CLOUDFORGE — CONTACT SHOWCASE
+===================================================== */
+
+.contact-showcase-section {
+    width: min(calc(100% - 40px), var(--max-width));
+    margin: 0 auto;
+    padding: 130px 0 100px;
+}
+
+.contact-showcase-header {
+    max-width: 900px;
+}
+
+.contact-showcase-kicker {
+    display: inline-block;
+    margin-bottom: 28px;
+    padding: 9px 18px;
+
+    border: 1px solid rgba(34, 211, 238, 0.45);
+    border-radius: 999px;
+
+    color: var(--cyan);
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.contact-showcase-header h2 {
+    margin: 0 0 25px;
+
+    color: var(--text);
+
+    font-size: clamp(58px, 9vw, 110px);
+    line-height: 0.92;
+    letter-spacing: -6px;
+}
+
+.contact-showcase-header h2 span {
+    color: var(--purple);
+}
+
+.contact-showcase-header p {
+    max-width: 850px;
+    margin: 0;
+
+    color: var(--text-secondary);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.contact-showcase-divider {
+    width: 100%;
+    height: 1px;
+
+    margin: 55px 0 70px;
+
+    background: rgba(148, 163, 184, 0.16);
+}
+
+
+/* ================= CONTACT GRID ================= */
+
+.contact-showcase-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1.15fr);
+
+    gap: 55px;
+    align-items: start;
+}
+
+
+/* ================= DIRECT CHANNELS ================= */
+
+.direct-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.direct-channels-title {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--cyan);
+
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+/* ================= CHANNEL CARDS ================= */
+
+.direct-channel-card {
+    position: relative;
+
+    min-height: 145px;
+
+    display: grid;
+
+    grid-template-columns:
+        72px
+        minmax(0, 1fr)
+        25px;
+
+    align-items: center;
+    gap: 20px;
+
+    padding: 25px;
+
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 18px;
+
+    background: rgba(15, 15, 25, 0.72);
+
+    color: var(--text);
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.direct-channel-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(168, 85, 247, 0.55);
+
+    background: rgba(168, 85, 247, 0.055);
+}
+
+
+/* ================= CHANNEL ICON ================= */
+
+.direct-channel-icon {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(168, 85, 247, 0.5);
+    border-radius: 50%;
+
+    color: var(--purple-light);
+    background: rgba(168, 85, 247, 0.035);
+
+    font-size: 26px;
+    flex-shrink: 0;
+}
+
+.direct-icon-text {
+    font-family: Arial, sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+
+/* ================= CHANNEL TEXT ================= */
+
+.direct-channel-copy {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.direct-channel-copy small {
+    color: var(--text-secondary);
+
+    font-family: monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.direct-channel-copy strong {
+    color: var(--text-secondary);
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.direct-channel-copy > span {
+    overflow-wrap: anywhere;
+
+    color: var(--text);
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+
+/* ================= ARROW ================= */
+
+.direct-channel-arrow {
+    align-self: start;
+
+    color: var(--cyan);
+    font-size: 20px;
+
+    transition: transform 0.25s ease;
+}
+
+.direct-channel-card:hover .direct-channel-arrow {
+    transform: translate(4px, -4px);
+}
+
+
+/* ================= MESSAGE PANEL ================= */
+
+.direct-message-panel {
+    padding: 48px;
+
+    border: 1px solid rgba(148, 163, 184, 0.24);
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(168, 85, 247, 0.09),
+            transparent 35%
+        ),
+        rgba(15, 15, 25, 0.78);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.2);
+}
+
+.direct-message-panel h3 {
+    margin: 0 0 35px;
+
+    color: var(--text);
+
+    font-size: clamp(28px, 4vw, 36px);
+    line-height: 1;
+    letter-spacing: -1.5px;
+}
+
+
+/* ================= FORM ================= */
+
+.direct-message-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.direct-message-form label {
+    margin-top: 8px;
+
+    color: var(--text);
+
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.direct-message-form input,
+.direct-message-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    border: 1px solid rgba(148, 163, 184, 0.24);
+    border-radius: 13px;
+
+    outline: none;
+
+    background: rgba(20, 20, 30, 0.85);
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: 15px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.direct-message-form input {
+    min-height: 60px;
+    padding: 0 20px;
+}
+
+.direct-message-form textarea {
+    min-height: 155px;
+    padding: 18px 20px;
+
+    resize: vertical;
+}
+
+.direct-message-form input::placeholder,
+.direct-message-form textarea::placeholder {
+    color: rgba(148, 163, 184, 0.62);
+}
+
+.direct-message-form input:focus,
+.direct-message-form textarea:focus {
+    border-color: var(--purple);
+
+    box-shadow:
+        0 0 0 3px rgba(168, 85, 247, 0.1);
+}
+
+
+/* ================= SEND BUTTON ================= */
+
+.direct-message-submit {
+    width: 100%;
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-top: 20px;
+
+    border: none;
+    border-radius: 999px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            #7c3aed
+        );
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 35px rgba(168, 85, 247, 0.2);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.direct-message-submit:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 16px 40px rgba(168, 85, 247, 0.35);
+}
+
+
+/* ================= FOOTER ================= */
+
+.cloudforge-showcase-footer {
+    width: 100%;
+
+    padding:
+        80px
+        max(20px, calc((100% - var(--max-width)) / 2))
+        35px;
+
+    border-top:
+        1px solid rgba(148, 163, 184, 0.14);
+}
+
+.footer-wordmark {
+    overflow: hidden;
+
+    color: transparent;
+
+    font-size: clamp(70px, 17vw, 230px);
+    font-weight: 800;
+    line-height: 0.8;
+    letter-spacing: -10px;
+
+    -webkit-text-stroke:
+        1px rgba(148, 163, 184, 0.12);
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+    margin-top: 45px;
+
+    color: var(--text-secondary);
+
+    font-family: monospace;
+    font-size: 11px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 18px;
+}
+
+.footer-socials a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.footer-socials a:hover {
+    color: var(--cyan);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .contact-showcase-section {
+        width: min(calc(100% - 40px), var(--max-width));
+        padding: 100px 0 80px;
+    }
+
+    .contact-showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .contact-showcase-header h2 {
+        font-size: clamp(58px, 14vw, 90px);
+        letter-spacing: -4px;
+    }
+
+    .direct-message-panel {
+        padding: 35px 28px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .contact-showcase-section {
+        width: calc(100% - 28px);
+        padding: 80px 0 65px;
+    }
+
+    .contact-showcase-kicker {
+        margin-bottom: 22px;
+        padding: 8px 14px;
+        font-size: 10px;
+    }
+
+    .contact-showcase-header h2 {
+        margin-bottom: 22px;
+        font-size: 56px;
+        line-height: 0.95;
+        letter-spacing: -3px;
+    }
+
+    .contact-showcase-header p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .contact-showcase-divider {
+        margin: 40px 0 45px;
+    }
+
+    .direct-channels {
+        gap: 16px;
+    }
+
+    .direct-channel-card {
+        min-height: 120px;
+
+        grid-template-columns:
+            52px
+            minmax(0, 1fr)
+            18px;
+
+        gap: 14px;
+        padding: 18px;
+
+        border-radius: 14px;
+    }
+
+    .direct-channel-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 20px;
+    }
+
+    .direct-icon-text {
+        font-size: 17px;
+    }
+
+    .direct-channel-copy small {
+        font-size: 8px;
+    }
+
+    .direct-channel-copy strong {
+        font-size: 12px;
+    }
+
+    .direct-channel-copy > span {
+        font-size: 14px;
+    }
+
+    .direct-channel-arrow {
+        font-size: 16px;
+    }
+
+    .direct-message-panel {
+        padding: 28px 18px;
+        border-radius: 16px;
+    }
+
+    .direct-message-panel h3 {
+        margin-bottom: 28px;
+        font-size: 27px;
+    }
+
+    .direct-message-form input {
+        min-height: 54px;
+        padding: 0 15px;
+        font-size: 14px;
+    }
+
+    .direct-message-form textarea {
+        min-height: 140px;
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .direct-message-submit {
+        min-height: 54px;
+        margin-top: 15px;
+    }
+
+    .cloudforge-showcase-footer {
+        padding: 55px 14px 25px;
+    }
+
+    .footer-wordmark {
+        font-size: 22vw;
+        letter-spacing: -3px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        margin-top: 30px;
+    }
+}
