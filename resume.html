@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume | Insaf Ibrahim</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #08080b;
+            color: #f5f5f5;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            border-bottom: 1px solid #292332;
+            background: rgba(8, 8, 11, 0.95);
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: #00d9ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #9ba3b4;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        /* MAIN */
+        .resume-section {
+            width: min(1100px, calc(100% - 40px));
+            margin: auto;
+            padding: 80px 0 70px;
+        }
+
+        .resume-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+
+        .label {
+            color: #00d9ff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: 0.95;
+            letter-spacing: -4px;
+        }
+
+        h1 span {
+            color: #a855f7;
+        }
+
+        .subtitle {
+            color: #8f98aa;
+            margin-top: 20px;
+            max-width: 650px;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* BUTTONS */
+        .resume-actions {
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 22px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .download-btn {
+            background: #a855f7;
+            color: white;
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            background: #9333ea;
+        }
+
+        .back-btn {
+            border: 1px solid #393342;
+            color: #c3c7d0;
+            background: #111116;
+        }
+
+        .back-btn:hover {
+            border-color: #a855f7;
+            color: white;
+        }
+
+        /* PDF VIEWER */
+        .resume-viewer {
+            background: #111116;
+            border: 1px solid #302b3b;
+            border-radius: 14px;
+            padding: 14px;
+
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+        }
+
+        .viewer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 10px 12px 16px;
+
+            color: #747c8c;
+            font-size: 12px;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #22c55e;
+        }
+
+        iframe {
+            display: block;
+
+            width: 100%;
+            height: 1100px;
+
+            border: none;
+            border-radius: 8px;
+
+            background: #ffffff;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #292332;
+            color: #606979;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+
+            .navbar {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .resume-section {
+                width: calc(100% - 24px);
+                padding: 50px 0;
+            }
+
+            .resume-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 52px;
+                letter-spacing: -2px;
+            }
+
+            .resume-actions {
+                width: 100%;
+            }
+
+            .btn {
+                flex: 1;
+            }
+
+            .resume-viewer {
+                padding: 7px;
+            }
+
+            iframe {
+                height: 850px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            <span>&lt;/&gt;</span> CloudForge
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#overview">Overview</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- RESUME -->
+    <main class="resume-section">
+
+        <div class="resume-header">
+
+            <div>
+                <div class="label">06 / RESUME</div>
+
+                <h1>
+                    MY <span>RESUME</span>
+                </h1>
+
+                <p class="subtitle">
+                    A quick overview of my education, technical skills,
+                    projects, internships and experience in AI, cloud
+                    computing and software development.
+                </p>
+            </div>
+
+
+            <div class="resume-actions">
+
+                <a
+                    href="resume.pdf"
+                    download="Insaf-Ibrahim-Resume.pdf"
+                    class="btn download-btn"
+                >
+                    DOWNLOAD RESUME ↓
+                </a>
+
+                <a
+                    href="index.html"
+                    class="btn back-btn"
+                >
+                    ← BACK
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PDF -->
+        <div class="resume-viewer">
+
+            <div class="viewer-top">
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Resume Preview
+                </div>
+
+                <span>PDF • A4</span>
+
+            </div>
+
+            <iframe
+                src="resume.pdf"
+                title="Insaf Ibrahim Resume"
+            >
+            </iframe>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 CloudForge. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
